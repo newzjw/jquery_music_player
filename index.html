@@ -4,9 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>zjw音乐播放器</title>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
-    <h1>2222</h1>
+    <div class="header">
+        <h1 class="logo"><a href="#"></a></h1>
+        <ul class="register">
+            <li>登录</li>
+            <li>设置</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="content_in">
+            <div class="content_left">
+                <div class="content_toolbar">
+                    <a><i></i>收藏</a>
+                    <a><i></i>添加到</a>
+                    <a><i></i>下载</a>
+                    <a><i></i>删除</a>
+                    <a><i></i>清空列表</a>
+                </div>
+                <div class="content_list" data-mcs-theme="minimal-dark">
+                    <ul>
+                        <li class="list_title">
+                            <div class="list_check"><i></i></div>
+                            <div class="list_number"></div>
+                            <div class="list_name">歌曲</div>
+                            <div class="list_singer">歌手</div>
+                            <div class="list_time">时长</div>
+                        </li>
+                        <!-- <li class="list_title">
+                            <div class="list_check"><i></i></div>
+                            <div class="list_number">1</div>
+                            <div class="list_name">歌曲1
+                                <div class="list_menu">
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                    <a href="javascript:;"></a>
+                                </div>
+                            </div>
+                            <div class="list_singer">歌手1</div>
+                            <div class="list_time">05:11</div>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="content_right">
+                
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_in"></div>
+    </div>
+
+    <div class="mask_bg"></div>
+    <div class="mask"></div>
 </body>
 </html>
