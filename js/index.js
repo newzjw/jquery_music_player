@@ -44,6 +44,44 @@ $(function(){
         $(".content_list").delegate(".list_check", "click", function () {
             $(this).toggleClass("list_checked");
         });
+
+        // 3.添加子菜单播放按钮的监听
+        var $musicPlay = $(".music_play");
+        $(".content_list").delegate(".list_menu_play", "click", function () {
+            var $item = $(this).parents(".list_music");
+
+            // console.log($item.get(0).index);
+            // console.log($item.get(0).music);
+
+            // 3.1切换播放图标
+            $(this).toggleClass("list_menu_play2");
+            // 3.2复原其它的播放图标
+            $item.siblings().find(".list_menu_play").removeClass("list_menu_play2");
+            // 3.3同步底部播放按钮
+            if($(this).hasClass("list_menu_play2")){
+                // 当前子菜单的播放按钮是播放状态
+                $musicPlay.addClass("music_play2");
+                // 让文字高亮
+                $item.find("div").css("color", "#fff");
+                $item.siblings().find("div").css("color", "rgba(255,255,255,0.5)");
+            }else{
+                // 当前子菜单的播放按钮不是播放状态
+                $musicPlay.removeClass("music_play2");
+                // 让文字不高亮
+                $item.find("div").css("color", "rgba(255,255,255,0.5)");
+            }
+            // 3.4切换序号的状态
+            $item.find(".list_number").toggleClass("list_number2");
+            $item.siblings().find(".list_number").removeClass("list_number2");
+
+            // // 3.5播放音乐
+            // player.playMusic($item.get(0).index, $item.get(0).music);
+
+            // // 3.5切换歌曲信息
+            // initMusicInfo($item.get(0).music);
+            // // 3.6切换歌词信息
+            // initMusicLyric($item.get(0).music);
+        });
     }
 
     // 定义一个方法创建一条音乐
@@ -66,7 +104,6 @@ $(function(){
             "     <a href=\"javascript:;\" title=\"删除\" class='list_menu_del'></a>\n" +
             "</div>\n" +
         "</li>");
-
         $item.get(0).index = index;
         $item.get(0).music = music;
 
